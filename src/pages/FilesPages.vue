@@ -126,7 +126,6 @@ export default {
         loadFiles() {
             api.uploadFiles(this.files);
             this.files = [];
-            this.$router.go(0);
         },
         getFiles() {
             api.getImg().then((res) => {
