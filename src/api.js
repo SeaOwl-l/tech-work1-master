@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 class api {
-    serverPath = 'https://tech-work-server.herokuapp.com/';
+    serverPath = 'https://tech-work-server.herokuapp.com';
     //serverPath = 'http://localhost:5000';
 
     getProducts = async () => {
