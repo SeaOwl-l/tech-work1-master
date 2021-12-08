@@ -93,11 +93,13 @@ class api {
             files.forEach((file) => {
                 formData.append('file', file);
             });
-            const response = await axios.post(
-                this.serverPath + '/loadFiles',
-                formData
-            );
-            alert('Файлы загружены на сервер!');
+            const response = await axios
+                .post(this.serverPath + '/loadFiles', formData)
+                .then(() => {
+                    alert('Файлы загружены на сервер!');
+                    location.reload();
+                });
+
             return response;
         } catch (error) {
             console.log(error.response);

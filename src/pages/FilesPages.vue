@@ -92,6 +92,7 @@ export default {
         },
         loadItems() {
             api.getImg().then((res) => {
+                this.img = res;
                 this.items.push({
                     active: true,
                     items: res,
@@ -127,18 +128,9 @@ export default {
             api.uploadFiles(this.files);
             this.files = [];
         },
-        getFiles() {
-            api.getImg().then((res) => {
-                this.img = res;
-            });
-            api.getFiles().then((res) => {
-                this.filesLoad = res;
-            });
-        },
     },
     created() {
         this.loadItems();
-        this.getFiles();
     },
 };
 </script>
